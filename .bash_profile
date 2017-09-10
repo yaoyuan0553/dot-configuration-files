@@ -1,4 +1,10 @@
+# commands
+
+# tabs
 tabs -4
+
+# set key repeat rate
+xset r rate 500 35
 
 # create a new executable script file with given name
 mksc() {
@@ -25,3 +31,12 @@ mkpy3() {
 
 # get public ip addr
 alias show-public-ip='dig +short myip.opendns.com @resolver1.opendns.com'
+
+# colored ls
+alias ls='ls --color=auto'
+
+# on Yuan-Desktop-Ubuntu
+if [ $HOSTNAME = "Yuan-Desktop-Ubuntu" ]; then
+    # go to TAMU folder
+    alias gotamu='cd /media/yuyao/Games/Temp-Documents/TAMU'
+fi
