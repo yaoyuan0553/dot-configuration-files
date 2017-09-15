@@ -39,4 +39,7 @@ alias ls='ls --color=auto'
 if [ $HOSTNAME = "yuyao-Ubuntu" ]; then
     # go to TAMU folder
     alias gotamu='cd /media/yuyao/Games/Temp-Documents/TAMU'
+elif [ $HOSTNAME = "yuyao-Laptop" ]; then
+    # go to TAMU folder
+    alias gotamu='cd /media/yuyao/Documents/TAMU'
 fi
