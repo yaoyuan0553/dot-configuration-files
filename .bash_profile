@@ -36,7 +36,7 @@ alias show-public-ip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias ls='ls --color=auto'
 
 # on Yuan-Desktop-Ubuntu
-if [ $HOSTNAME = "Yuan-Desktop-Ubuntu" ]; then
+if [ $HOSTNAME = "yuyao-Ubuntu" ]; then
     # go to TAMU folder
     alias gotamu='cd /media/yuyao/Games/Temp-Documents/TAMU'
 fi
