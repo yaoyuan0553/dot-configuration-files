@@ -57,8 +57,10 @@ set shiftwidth=4
 set expandtab
 
 " store vim swap files on different location
-set backupdir=/home/yuyao/.vim/.temp//
-set directory=/home/yuyao/.vim/.temp//
+" mkdir if not exists
+silent !mkdir -p ~/.vim/.temp
+set backupdir=~/.vim/.temp//
+set directory=~/.vim/.temp//
 
 set number
 
