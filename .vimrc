@@ -66,6 +66,7 @@ set background=dark
 set t_Co=256
 
 " highlight search
+set hlsearch 
 set incsearch
 nnoremap <esc><esc> :silent! nohls<cr>
 
