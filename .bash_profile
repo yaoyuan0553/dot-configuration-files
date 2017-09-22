@@ -29,11 +29,15 @@ mkpy3() {
 	mksc python3 $1;
 }
 
+## aliases
 # get public ip addr
 alias show-public-ip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 # colored ls
 alias ls='ls --color=auto'
+
+# open files from terminal with default program
+alias o='xdg-open'
 
 # on Yuan-Desktop-Ubuntu
 if [ $HOSTNAME = "yuyao-Ubuntu" ]; then
