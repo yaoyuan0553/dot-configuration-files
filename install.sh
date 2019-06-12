@@ -8,7 +8,7 @@ ln -s ~/dot-configuration-files/.vimrc ~/.vimrc
 ln -s ~/dot-configuration-files/.bash_profile ~/.bash_profile
 
 # source .bash_profile in .bashrc
-echo "Please add bash_profile to basrc"
+echo "Please add bash_profile to basrc or zshrc"
 
 # install Vim Plugins
 vim -c "PluginInstall" -c "q"
@@ -22,3 +22,5 @@ sudo apt-get install python-dev python3-dev
 
 # install clang-format
 sudo apt-get install clang-format
+
+sudo apt-get install ffmpeg

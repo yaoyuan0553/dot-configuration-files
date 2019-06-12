@@ -37,9 +37,11 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 let g:pymode_rope_complete_on_dot = 0
+let g:pymode_lint_ignore = ["E111","E114","E251", "E231", "E501", "W0401"]
 
-" let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+"let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_global_ycm_extra_conf = '/home/yuan/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 
 " vim2hs options
 set nofoldenable    "disable folding
@@ -74,6 +76,9 @@ nnoremap <esc><esc> :silent! nohls<cr>
 
 " Hotkey mapping
 map <C-n> :NERDTreeToggle<CR>
+
+" pymode auto pep8 fix
+map <Leader>8 :PymodeLintAuto<cr>
 
 " C++ formatter settings
 "
