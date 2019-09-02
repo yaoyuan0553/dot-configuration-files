@@ -12,6 +12,8 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'Valloric/YouCompleteMe'
 
+" Plugin 'zxqfl/tabnine-vim'
+
 Plugin 'scrooloose/nerdtree'
 
 Plugin 'vim-airline/vim-airline'
@@ -31,6 +33,8 @@ Plugin 'rhysd/vim-clang-format'
 
 " Haskell support
 Plugin 'dag/vim2hs'
+
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
