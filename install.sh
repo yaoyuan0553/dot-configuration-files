@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 sudo apt update
 sudo apt-get update
@@ -23,11 +23,13 @@ echo "Please add bash_profile to basrc or zshrc"
 vim -c "PluginInstall" -c "qa"
 
 # install YCM prerequisites
-sudo apt-get install build-essential cmake
-sudo apt-get install python-dev python3-dev
+sudo apt-get install -y build-essential cmake
+sudo apt-get install -y python-dev python3-dev
+
+# install clang-format
+sudo apt-get install -y clang-format
 
 # install YCM
 ~/.vim/bundle/YouCompleteMe/install.py --clang-completer
+# ~/.vim/bundle/YouCompleteMe/install.py
 
-# install clang-format
-sudo apt-get install clang-format
