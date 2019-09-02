@@ -20,6 +20,12 @@ Plugin 'tpope/vim-fugitive'
 
 Plugin 'python-mode/python-mode'
 
+" TypeScript  support
+Plugin 'leafgarland/typescript-vim'
+
+" vue support
+Plugin 'posva/vim-vue'
+
 " visual studio color theme
 Plugin 'tomasiser/vim-code-dark'
 
@@ -41,7 +47,9 @@ let g:pymode_lint_ignore = ["E111","E114","E251", "E231", "E501", "W0401"]
 
 "let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_global_ycm_extra_conf = '/home/yuan/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+" let g:ycm_global_ycm_extra_conf = '/home/yuan/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+
+let g:ycm_global_ycm_extra_conf = $HOME.'/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 
 " vim2hs options
 set nofoldenable    "disable folding

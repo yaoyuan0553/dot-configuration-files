@@ -3,9 +3,6 @@
 # tabs
 tabs -4
 
-# set key repeat rate
-xset r rate 500 35
-
 _split_path_filename() {
     _path=$(dirname "${1}")
     _filename=$(basename -- "${1}")
