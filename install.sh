@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+sudo apt update
+sudo apt-get update
+
+#install zsh and oh-my-zsh
+sudo apt-get install -y git vim zsh openssh-server curl
+chsh -s /bin/zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+
 # install Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
@@ -14,21 +23,13 @@ echo "Please add bash_profile to basrc or zshrc"
 vim -c "PluginInstall" -c "qa"
 
 # install YCM prerequisites
-sudo apt-get install build-essential cmake
-sudo apt-get install python-dev python3-dev
-
-# install YCM
-# ~/.vim/bundle/YouCompleteMe/install.py --clang-completer
-~/.vim/bundle/YouCompleteMe/install.py
+sudo apt-get install -y build-essential cmake
+sudo apt-get install -y python-dev python3-dev
 
 # install clang-format
-sudo apt-get install clang-format
+sudo apt-get install -y clang-format
 
-# install zsh
-sudo apt install zsh
+# install YCM
+~/.vim/bundle/YouCompleteMe/install.py --clang-completer
+# ~/.vim/bundle/YouCompleteMe/install.py
 
-# install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-# change shell to zsh
-chsh -s $(which zsh)
