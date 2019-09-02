@@ -112,9 +112,7 @@ alias cbhs="cat $HISTFILE | tail -n 1 | cb"
 # get public ip addr
 alias show-public-ip='dig +short myip.opendns.com @resolver1.opendns.com'
 
-# colored ls
-alias ls='ls --color=auto'
-
 # open files from terminal with default program
 alias o='xdg-open'
 
+export PATH="$PATH:/media/yuan/Samsung_T5/Downloads"

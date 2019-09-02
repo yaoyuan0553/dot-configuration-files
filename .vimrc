@@ -32,16 +32,23 @@ Plugin 'rhysd/vim-clang-format'
 " Haskell support
 Plugin 'dag/vim2hs'
 
+" Markdown preview
+Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+
+" turn on rope
+let g:pymode_rope = 1
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_lint_ignore = ["E111","E114","E251", "E231", "E501", "W0401"]
 
 "let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_global_ycm_extra_conf = '/home/yuan/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+
 
 " vim2hs options
 set nofoldenable    "disable folding
@@ -69,16 +76,24 @@ set number
 set background=dark
 set t_Co=256
 
+" set ycm error highlight color
+highlight YcmErrorSection guibg=yellow
+
 " highlight search
 set hlsearch 
 set incsearch
 nnoremap <esc><esc> :silent! nohls<cr>
 
-" Hotkey mapping
+" Nerdtree shortcut
 map <C-n> :NERDTreeToggle<CR>
 
 " pymode auto pep8 fix
 map <Leader>8 :PymodeLintAuto<cr>
+
+" copy/paste to/from xclip (system clipboard)
+map <F7> :w !xclip<CR><CR>
+vmap <F7> :w !xclip<CR><CR>
+map <S-F7> :r!xclip -o<CR>
 
 " C++ formatter settings
 "
