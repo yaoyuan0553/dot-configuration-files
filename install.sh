@@ -15,8 +15,10 @@ git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.v
 
 # symbolic link to bash_profile and vimrc
 ln -s $HOME/dot-configuration-files/.vimrc $HOME/.vimrc
+
 ln -s $HOME/dot-configuration-files/.bash_profile $HOME/.bash_profile
-ln -s $HOME/dot-configuration-files/.zshrc $HOME/.zshrc
+
+ln -sf $HOME/dot-configuration-files/.zshrc $HOME/.zshrc
 
 # source .bash_profile in .bashrc
 echo "Please add bash_profile to basrc or zshrc"
