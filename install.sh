@@ -5,9 +5,6 @@ sudo apt-get update
 
 #install zsh and oh-my-zsh
 sudo apt-get install -y git vim zsh openssh-server curl fonts-powerline
-chsh -s /bin/zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-curl -L git.io/antigen > $HOME/antigen.zsh
 
 
 # install Vundle
@@ -37,3 +34,6 @@ sudo apt-get install -y clang-format
 $HOME/.vim/bundle/YouCompleteMe/install.py --clang-completer
 # ~/.vim/bundle/YouCompleteMe/install.py
 
+chsh -s /bin/zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+curl -L git.io/antigen > $HOME/antigen.zsh
