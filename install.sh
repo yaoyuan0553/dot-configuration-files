@@ -4,7 +4,7 @@ sudo apt update
 sudo apt-get update
 
 #install zsh and oh-my-zsh
-sudo apt-get install -y git vim zsh openssh-server curl fonts-powerline
+sudo apt-get install -y git vim zsh openssh-server xclip htop curl fonts-powerline
 
 
 # install Vundle
@@ -15,7 +15,6 @@ ln -s $HOME/dot-configuration-files/.vimrc $HOME/.vimrc
 
 ln -s $HOME/dot-configuration-files/.bash_profile $HOME/.bash_profile
 
-ln -sf $HOME/dot-configuration-files/.zshrc $HOME/.zshrc
 
 # source .bash_profile in .bashrc
 echo "Please add bash_profile to basrc or zshrc"
@@ -37,3 +36,5 @@ $HOME/.vim/bundle/YouCompleteMe/install.py --clang-completer
 chsh -s /bin/zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 curl -L git.io/antigen > $HOME/antigen.zsh
+
+ln -sf $HOME/dot-configuration-files/.zshrc $HOME/.zshrc
