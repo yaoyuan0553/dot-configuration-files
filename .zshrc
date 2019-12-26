@@ -111,8 +111,10 @@ BULLETTRAIN_PROMPT_ORDER=(
   dir
 )
 
-npm set prefix ~/.npm
-PATH="$HOME/.npm/bin:$PATH"
-PATH="./node_modules/.bin:$PATH"
+if [ -x "$(command -v npm)" ]; then
+    npm set prefix ~/.npm
+    PATH="$HOME/.npm/bin:$PATH"
+    PATH="./node_modules/.bin:$PATH"
+fi
 
 antigen apply
