@@ -10,7 +10,11 @@ Plugin 'VundleVim/Vundle.vim'
 
 "Plugin 'davidhalter/jedi-vim'
 
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'rdnetto/YCM-Generator'
+
+" Plugin 'jeaye/color_coded'
 
 " Plugin 'zxqfl/tabnine-vim'
 
@@ -32,7 +36,7 @@ Plugin 'posva/vim-vue'
 Plugin 'tomasiser/vim-code-dark'
 
 " C++ highlight
-Plugin 'octol/vim-cpp-enhanced-highlight'
+" Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " C++ format
 Plugin 'rhysd/vim-clang-format'
@@ -57,6 +61,9 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 " let g:ycm_global_ycm_extra_conf = '/home/yuan/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 
 let g:ycm_global_ycm_extra_conf = $HOME.'/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+let g:ycm_clangd_binary_path = '/usr/bin/clangd-11'
+
+nnoremap <F12> :YcmCompleter GoToDeclaration<CR>
 
 
 " vim2hs options

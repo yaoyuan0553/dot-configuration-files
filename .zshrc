@@ -106,13 +106,20 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 fi
 
 BULLETTRAIN_PROMPT_ORDER=(
+  time
   git
+  status
   context
   dir
+  cmd_exec_time
 )
 
-npm set prefix ~/.npm
-PATH="$HOME/.npm/bin:$PATH"
-PATH="./node_modules/.bin:$PATH"
+if [ -x "$(command -v npm)" ]; then
+    npm set prefix ~/.npm
+    PATH="$HOME/.npm/bin:$PATH"
+    PATH="./node_modules/.bin:$PATH"
+fi
 
 antigen apply
+
+export TERM="xterm-256color"
