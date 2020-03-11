@@ -20,6 +20,8 @@ Plugin 'rdnetto/YCM-Generator'
 
 Plugin 'scrooloose/nerdtree'
 
+Plugin 'preservim/nerdcommenter'
+
 Plugin 'vim-airline/vim-airline'
 " airline themes
 Plugin 'vim-airline/vim-airline-themes'
@@ -106,6 +108,13 @@ nnoremap <esc><esc> :silent! nohls<cr>
 
 " Nerdtree shortcut
 map <C-n> :NERDTreeToggle<CR>
+
+
+" Nerdcommenter
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+nmap <C-_> <Plug>NERDCommenterToggle
+vmap <C-_> <Plug>NERDCommenterToggle<CR>gv
 
 " pymode auto pep8 fix
 map <Leader>8 :PymodeLintAuto<cr>

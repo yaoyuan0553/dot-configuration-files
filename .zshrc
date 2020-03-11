@@ -114,15 +114,15 @@ BULLETTRAIN_PROMPT_ORDER=(
   cmd_exec_time
 )
 
-if [ -x "$(command -v npm)" ]; then
-    npm set prefix ~/.npm
-    PATH="$HOME/.npm/bin:$PATH"
-    PATH="./node_modules/.bin:$PATH"
-fi
+# if [ -x "$(command -v npm)" ]; then
+    # npm set prefix ~/.npm
+    # PATH="$HOME/.npm/bin:$PATH"
+    # PATH="./node_modules/.bin:$PATH"
+# fi
 
 antigen apply
 
-if [ "$DESKTOP_SESSION" == "plasma" ]; then
+if [ "$DESKTOP_SESSION" = "plasma" ]; then
     sleep 0.2
     if [[ $(ps --no-header -p $PPID -o comm) =~ tilix ]]; then
         for wid in $(xdotool search --pid $PPID); do
