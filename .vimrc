@@ -17,6 +17,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 
 Plugin 'vim-airline/vim-airline'
+" airline themes
+Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'tpope/vim-fugitive'
 
@@ -66,6 +68,8 @@ set nofoldenable    "disable folding
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
+let g:cpp_concepts_highlight = 1
+
 
 " show existing tab with 4 spaces width
 set tabstop=4
@@ -104,6 +108,10 @@ map <F7> :w !xclip<CR><CR>
 vmap <F7> :w !xclip<CR><CR>
 map <S-F7> :r!xclip -o<CR>
 
+" airline settings
+let g:airline_powerline_fonts = 1
+let g:airline_theme='deus'
+
 " C++ formatter settings
 "
 let g:clang_format#style_options = {
@@ -123,3 +131,5 @@ let g:clang_format#style_options = {
 "autocmd FileType c,cpp ClangFormatAutoEnable
 autocmd FileType c,cpp nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp vnoremap <buffer><Leader>cf :ClangFormat<CR>
+autocmd FileType c,cpp let g:airline_theme = 'codedark'
+autocmd FileType c,cpp colorscheme codedark 

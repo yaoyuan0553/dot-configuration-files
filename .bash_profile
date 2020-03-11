@@ -60,6 +60,26 @@ mkpy3() {
 	mksc python3 $1;
 }
 
+# swap 2 file names
+swap_files() {
+    if [ $# -ne 2 ]
+    then
+        printf "Usage: swap_files file1 file2\n" > /dev/stderr
+    else
+        file1_dir=${1%/*}
+        # just in case there were no slashes removed, assume cwd
+        if [ "$file1_dir" = "$1" ]; then
+            file1_dir="."
+        fi
+
+        tmpfile=$(mktemp -p "$file1_dir" )
+
+        mv -- "$1" "$tmpfile"
+        mv -- "$2" "$1"
+        mv -- "$tmpfile" "$2"
+    fi
+}
+
 # A shortcut function that simplifies usage of xclip.
 # - Accepts input from either stdin (pipe), or params.
 # ------------------------------------------------
