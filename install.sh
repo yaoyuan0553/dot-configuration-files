@@ -4,7 +4,7 @@ sudo apt update
 sudo apt-get update
 
 #install zsh and oh-my-zsh
-sudo apt-get install -y git vim zsh openssh-server xclip htop curl fonts-powerline
+sudo apt-get install -y git vim zsh openssh-server xclip htop curl fonts-powerline tmux
 
 
 # install Vundle
@@ -15,6 +15,7 @@ ln -s $HOME/dot-configuration-files/.vimrc $HOME/.vimrc
 
 ln -s $HOME/dot-configuration-files/.bash_profile $HOME/.bash_profile
 
+ln -s $HOME/dot-configuration-files/.tmux.conf $HOME/.tmux.conf
 
 # source .bash_profile in .bashrc
 echo "Please add bash_profile to basrc or zshrc"
