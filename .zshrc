@@ -106,9 +106,12 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 fi
 
 BULLETTRAIN_PROMPT_ORDER=(
+  time
   git
+  status
   context
   dir
+  cmd_exec_time
 )
 
 if [ -x "$(command -v npm)" ]; then
@@ -118,3 +121,13 @@ if [ -x "$(command -v npm)" ]; then
 fi
 
 antigen apply
+
+if [ "$DESKTOP_SESSION" == "plasma" ]; then
+    sleep 0.2
+    if [[ $(ps --no-header -p $PPID -o comm) =~ tilix ]]; then
+        for wid in $(xdotool search --pid $PPID); do
+            xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $wid; done
+    fi
+fi
+
+export TERM="xterm-256color"

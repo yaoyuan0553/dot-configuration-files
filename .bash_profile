@@ -1,3 +1,6 @@
+# proxy
+#export http_proxy="http://127.0.0.1:12333"
+#export https_proxy="http://127.0.0.1:12333"
 # commands
 
 # tabs
@@ -133,3 +136,11 @@ alias show-public-ip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias o='xdg-open'
 
 export PATH="$PATH:/media/yuan/Samsung_T5/Downloads"
+export PATH="$HOME/.npm-global/bin:$PATH"
+export PATH="/usr/bin/v2ray:$PATH"
+export PAGER="most"
+
+alias HP="http_proxy=http://127.0.0.1:1080"
+alias HPS="https_proxy=http://127.0.0.1:1080"
+
+alias tmux="env TERM=screen-256color tmux"
