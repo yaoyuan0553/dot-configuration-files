@@ -10,11 +10,11 @@ Plugin 'VundleVim/Vundle.vim'
 
 "Plugin 'davidhalter/jedi-vim'
 
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'rdnetto/YCM-Generator'
 
-" Plugin 'jeaye/color_coded'
+Plugin 'jeaye/color_coded'
 
 " Plugin 'zxqfl/tabnine-vim'
 
@@ -37,7 +37,8 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'posva/vim-vue'
 
 " visual studio color theme
-Plugin 'tomasiser/vim-code-dark'
+" Plugin 'tomasiser/vim-code-dark'
+Plugin 'yaoyuan0553/vim-code-dark'
 
 " C++ highlight
 " Plugin 'octol/vim-cpp-enhanced-highlight'
@@ -54,6 +55,7 @@ Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+syntax on
 
 " turn on rope
 let g:pymode_rope = 1
