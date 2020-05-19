@@ -1,72 +1,77 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
 
+call plug#begin('~/.vim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
+"Plug 'davidhalter/jedi-vim'
 
-"Plugin 'davidhalter/jedi-vim'
+Plug 'Valloric/YouCompleteMe'
 
-Plugin 'Valloric/YouCompleteMe'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
-Plugin 'rdnetto/YCM-Generator'
+Plug 'jeaye/color_coded'
 
-Plugin 'jeaye/color_coded'
+" Plug 'zxqfl/tabnine-vim'
 
-" Plugin 'zxqfl/tabnine-vim'
+Plug 'scrooloose/nerdtree'
 
-Plugin 'scrooloose/nerdtree'
+Plug 'preservim/nerdcommenter'
 
-Plugin 'preservim/nerdcommenter'
-
-Plugin 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 " airline themes
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
 
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
-Plugin 'python-mode/python-mode'
+" auto pair
+Plug 'jiangmiao/auto-pairs'
+
+Plug 'python-mode/python-mode'
 
 " TypeScript  support
-Plugin 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim'
 
 " vue support
-Plugin 'posva/vim-vue'
+" Plug 'posva/vim-vue'
 
 " visual studio color theme
-" Plugin 'tomasiser/vim-code-dark'
-Plugin 'yaoyuan0553/vim-code-dark'
+" Plug 'tomasiser/vim-code-dark'
+Plug 'yaoyuan0553/vim-code-dark'
 
 " C++ highlight
-" Plugin 'octol/vim-cpp-enhanced-highlight'
+" Plug 'octol/vim-cpp-enhanced-highlight'
 
 " C++ format
-Plugin 'rhysd/vim-clang-format'
+Plug 'rhysd/vim-clang-format'
 
 " Haskell support
-Plugin 'dag/vim2hs'
+Plug 'dag/vim2hs'
 
 " Markdown preview
-Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
+Plug 'suan/vim-instant-markdown', {'rtp': 'after'}
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()
+
+" " All of your Plugs must be added before the following line
+" call vundle#end()            " required
 filetype plugin indent on    " required
 syntax on
 
+set backspace=indent,eol,start
+
 " turn on rope
-let g:pymode_rope = 1
-let g:pymode_rope_complete_on_dot = 0
+" let g:pymode_rope = 1
+" let g:pymode_rope_complete_on_dot = 0
 let g:pymode_lint_ignore = ["E111","E114","E251", "E231", "E501", "W0401"]
 
 "let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 " let g:ycm_global_ycm_extra_conf = '/home/yuan/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 
-let g:ycm_global_ycm_extra_conf = $HOME.'/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '$HOME/.ycm_extra_conf.py'
 let g:ycm_clangd_binary_path = '/usr/bin/clangd-11'
 
 nnoremap <F12> :YcmCompleter GoToDeclaration<CR>
@@ -151,3 +156,5 @@ autocmd FileType c,cpp nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp vnoremap <buffer><Leader>cf :ClangFormat<CR>
 autocmd FileType c,cpp let g:airline_theme = 'codedark'
 autocmd FileType c,cpp colorscheme codedark 
+
+au FileType cpp let b:AutoPairs = AutoPairsDefine({'\w\zs<': '>'})
