@@ -1,6 +1,6 @@
 # proxy
-#export http_proxy="http://127.0.0.1:12333"
-#export https_proxy="http://127.0.0.1:12333"
+export http_proxy="http://host.docker.internal:10809"
+export https_proxy="http://host.docker.internal:10809"
 # commands
 
 # tabs
@@ -140,7 +140,11 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="/usr/bin/v2ray:$PATH"
 export PAGER="most"
 
+export EDITOR="/usr/bin/vim"
+
 alias HP="http_proxy=http://127.0.0.1:1080"
 alias HPS="https_proxy=http://127.0.0.1:1080"
 
 alias tmux="env TERM=screen-256color tmux"
+
+alias vimrc="vim $HOME/.vimrc"
