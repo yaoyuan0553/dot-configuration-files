@@ -138,6 +138,7 @@ alias o='xdg-open'
 export PATH="$PATH:/media/yuan/Samsung_T5/Downloads"
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="/usr/bin/v2ray:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PAGER="most"
 
 export EDITOR="/usr/bin/vim"
@@ -148,3 +149,10 @@ alias HPS="https_proxy=http://127.0.0.1:1080"
 alias tmux="env TERM=screen-256color tmux"
 
 alias vimrc="vim $HOME/.vimrc"
+
+if grep -iq Microsoft /proc/version; then
+    export DISPLAY=$(ipconfig.exe | grep "vEthernet (WSL)" -A 3 | grep "IPv4 Address" | tr -d "\r" | awk '{print $NF":0.0"; exit;}')
+    export LIBGL_ALWAYS_INDIRECT=1
+else
+    :
+fi
