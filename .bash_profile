@@ -1,6 +1,8 @@
 # proxy
-export http_proxy="http://host.docker.internal:10809"
-export https_proxy="http://host.docker.internal:10809"
+# export http_proxy="http://host.docker.internal:10809"
+# export https_proxy="http://host.docker.internal:10809"
+export http_proxy="http://127.0.0.1:58591"
+export https_proxy="http://127.0.0.1:58591"
 # commands
 
 # tabs
@@ -134,6 +136,8 @@ alias show-public-ip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 # open files from terminal with default program
 alias o='xdg-open'
+
+alias vimrc="vim $HOME/.vimrc"
 
 export PATH="$PATH:/media/yuan/Samsung_T5/Downloads"
 export PATH="$HOME/.npm-global/bin:$PATH"

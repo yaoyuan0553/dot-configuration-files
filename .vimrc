@@ -17,11 +17,22 @@ call plug#begin('~/.vim/plugged')
 " Plug 'zxqfl/tabnine-vim'
 
 " ccls language server
+
+" coc 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'MaskRay/ccls'
 
 " C++ semantic highlighting
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 
+" aosp
+Plug 'rubberduck203/aosp-vim'
+
+"easymotion
+Plug 'easymotion/vim-easymotion'
+
+Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'scrooloose/nerdtree'
 
@@ -302,8 +313,9 @@ let g:airline#extensions#coc#enabled = 1
 let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
 let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
 
+
 " Colorizer
-:let g:colorizer_auto_filetype='css,html,vim'
+let g:colorizer_auto_filetype='css,html,vim'
 
 " let synhere = synID(line("."), col("."), 1)
 " let oldcolor = synIDattr(synIDtrans(synhere), "fg")
