@@ -16,12 +16,27 @@ call plug#begin('~/.vim/plugged')
 
 " Plug 'zxqfl/tabnine-vim'
 
+" Fuzzy search
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+Plug 'justinmk/vim-syntax-extra'
+
+" syntastic
+Plug 'vim-syntastic/syntastic'
+
 " ccls language server
 
 " coc 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'MaskRay/ccls'
+
+" golang
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" Kotlin
+Plug 'udalov/kotlin-vim'
 
 " C++ semantic highlighting
 Plug 'jackguo380/vim-lsp-cxx-highlight'
@@ -52,6 +67,9 @@ Plug 'python-mode/python-mode'
 " TypeScript  support
 Plug 'leafgarland/typescript-vim'
 
+" Dockerfile
+Plug 'ekalinin/Dockerfile.vim'
+
 " vue support
 " Plug 'posva/vim-vue'
 
@@ -72,7 +90,11 @@ Plug 'dag/vim2hs'
 Plug 'suan/vim-instant-markdown', {'rtp': 'after'}
 
 " color for color codes
-Plug 'chrisbra/Colorizer'
+" Plug 'chrisbra/Colorizer'
+
+" systemd
+Plug 'Matt-Deacalion/vim-systemd-syntax'
+
 
 call plug#end()
 
@@ -83,10 +105,13 @@ syntax on
 
 set backspace=indent,eol,start
 
+" pymode
+let g:pymode_options_max_line_length=100
+
 " turn on rope
 " let g:pymode_rope = 1
 " let g:pymode_rope_complete_on_dot = 0
-let g:pymode_lint_ignore = ["E111","E114","E251", "E231", "E501", "W0401"]
+" let g:pymode_lint_ignore = ["E111","E114","E251", "E231", "E501", "W0401"]
 
 "let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -134,6 +159,9 @@ set hlsearch
 set incsearch
 nnoremap <esc><esc> :silent! nohls<cr>
 
+" fzf search
+map <Leader>f :Files<CR>
+
 " Nerdtree shortcut
 map <C-n> :NERDTreeToggle<CR>
 
@@ -168,6 +196,7 @@ let g:clang_format#style_options = {
             \ "AfterStruct" : "false",
             \ "AfterNamespace" : "true"
         \ },
+        \ "ColumnLimit" : 0,
         \ "AllowShortIfStatementsOnASingleLine" : "true",
         \ "AllowShortFunctionsOnASingleLine" : "Inline",
         \ "IndentCaseLabels" : "false",
@@ -321,3 +350,8 @@ let g:colorizer_auto_filetype='css,html,vim'
 " let oldcolor = synIDattr(synIDtrans(synhere), "fg")
 " let what = synIDattr(synhere, "name")
 " echo ":highlight " . what . " ctermfg=" . oldcolor
+
+let g:AutoPairsShortcutFastWrap = '<Leader>e'
+
+" wrap lines for vimdiff
+autocmd FilterWritePre * if &diff | setlocal wrap< | endif
