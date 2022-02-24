@@ -1,8 +1,10 @@
 # proxy
-# export http_proxy="http://host.docker.internal:10809"
-# export https_proxy="http://host.docker.internal:10809"
-export http_proxy="http://127.0.0.1:58591"
-export https_proxy="http://127.0.0.1:58591"
+# export http_proxy="http://127.0.0.1:8888"
+# export https_proxy="http://127.0.0.1:8888"
+# export http_proxy="http://127.0.0.1:41091"
+# export https_proxy="http://127.0.0.1:41091"
+# export http_proxy="http://0.0.0.0:58591"
+# export https_proxy="http://0.0.0.0:58591"
 # commands
 
 # tabs
@@ -122,7 +124,7 @@ cb() {
 # Aliases / functions leveraging the cb() function
 # ------------------------------------------------
 # Copy contents of a file
-function cbf() { cat "$1" | cb; }
+cbf() { cat "$1" | cb; }
 # Copy SSH public key
 alias cbssh="cbf ~/.ssh/id_rsa.pub"
 # Copy current working directory
@@ -141,16 +143,22 @@ alias vimrc="vim $HOME/.vimrc"
 
 export PATH="$PATH:/media/yuan/Samsung_T5/Downloads"
 export PATH="$HOME/.npm-global/bin:$PATH"
+export PATH="$HOME/.npm/bin:$PATH"
 export PATH="/usr/bin/v2ray:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PAGER="most"
+export PATH="/opt/cmake/cmake-3.16.4-Linux-x86_64/bin:$PATH"
+export PATH="/usr/local/texlive/2020/bin/x86_64-linux:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+# export PAGER="most"
+export MANPATH="$MANPATH:/usr/local/texlive/2020/texmf-dist/doc/man"
+export INFOPATH="$INFOPATH:/usr/local/texlive/2020/texmf-dist/doc/info"
 
 export EDITOR="/usr/bin/vim"
 
-alias HP="http_proxy=http://127.0.0.1:1080"
-alias HPS="https_proxy=http://127.0.0.1:1080"
+# alias HP="http_proxy=http://127.0.0.1:58591"
+# alias HPS="https_proxy=http://127.0.0.1:58591"
 
-alias tmux="env TERM=screen-256color tmux"
+# alias tmux="env TERM=screen-256color tmux"
 
 alias vimrc="vim $HOME/.vimrc"
 
@@ -160,3 +168,5 @@ if grep -iq Microsoft /proc/version; then
 else
     :
 fi
+
+source "$HOME/.cargo/env"
