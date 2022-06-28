@@ -355,3 +355,12 @@ let g:AutoPairsShortcutFastWrap = '<Leader>e'
 
 " wrap lines for vimdiff
 autocmd FilterWritePre * if &diff | setlocal wrap< | endif
+
+" WSL 2 clipboard support
+let s:clip = '/mnt/c/Windows/system32/clip.exe'
+if executable(s:clip)
+    augroup WSLYank
+        autocmd!
+        autocmd TextYankPost * if v:event.operator ==# 'y' && v:event.regname ==# 'c' | call system(s:clip, @c) | endif
+    augroup END
+endif

@@ -111,8 +111,14 @@ cb() {
       echo "Usage: cb <string>"
       echo "       echo <string> | cb"
     else
-      # Copy input to clipboard
-      echo -n "$input" | xclip -selection c
+      # if on WSL, just use the Windows clipboard
+      if grep -qi microsoft /proc/version; then
+          echo -n "$input" | clip.exe
+      # we are on native linux, use xclip
+      else
+          # Copy input to clipboard
+          echo -n "$input" | xclip -selection c
+      fi
       # Truncate text for status
       if [ ${#input} -gt 80 ]; then input="$(echo $input | cut -c1-80)$_trn_col...\e[0m"; fi
       # Print status.
@@ -172,3 +178,6 @@ fi
 if [ -d "$HOME/.cargo/env" ]; then
     source "$HOME/.cargo/env"
 fi
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
