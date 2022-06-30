@@ -48,9 +48,11 @@ sudo apt install -y clang-format
 # install YCM
 # $HOME/.vim/plugged/YouCompleteMe/install.py --clang-completer
 
-# chsh -s /bin/zsh
+chsh -s /bin/zsh
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 curl -L git.io/antigen > "$HOME/antigen.zsh"
 ln -sf "$HOME/dot-configuration-files/.zshrc" "$HOME/.zshrc"
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sudo ln -s /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.s
