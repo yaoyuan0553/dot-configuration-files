@@ -55,4 +55,4 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 curl -L git.io/antigen > "$HOME/antigen.zsh"
 ln -sf "$HOME/dot-configuration-files/.zshrc" "$HOME/.zshrc"
 
-sudo ln -s /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.s
+sudo ln -s /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh
