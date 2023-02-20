@@ -21,6 +21,9 @@ else
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
+# depot_tools
+git clone https://chromium.googlesource.com/chromium/tools/depot_tools "$HOME/depot_tools"
+
 # symbolic link to bash_profile, vimrc, and tmux
 ln -sf "$HOME/dot-configuration-files/.vimrc" "$HOME/.vimrc"
 

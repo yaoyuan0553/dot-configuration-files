@@ -147,7 +147,7 @@ alias o='xdg-open'
 
 alias vimrc="vim $HOME/.vimrc"
 
-export PATH="$PATH:/media/yuan/Samsung_T5/Downloads"
+export PATH="$HOME/depot_tools:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/.npm/bin:$PATH"
 export PATH="/usr/bin/v2ray:$PATH"
